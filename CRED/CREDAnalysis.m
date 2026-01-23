@@ -80,6 +80,7 @@ for k = 1:18 %Change value to change file range
                 fprintf('Range of voltage in one spring impulse trial %d : %.2f\n', k, rngTest);
                 fprintf(fid, 'Range of voltage in one spring impulse trial %d : %.2f\n', k, rngTest); % Write to file
                 %Find time from base to peak and avg it
+        fprintf(fid, '-----------------------------------------------------------\n');
 
     elseif (3<k) && (k<7)
 
@@ -102,7 +103,7 @@ for k = 1:18 %Change value to change file range
                 rngTest = max(voltageCount) - min(voltageCount);
                 fprintf(fid, 'Range of voltage in the one spring slow trial %d : %.2f\n', k-3, rngTest);
                 %Find time from base to peak and avg it
-            
+        fprintf(fid, '-----------------------------------------------------------\n');
 
     elseif (6<k) && (k<10)
 
@@ -125,7 +126,7 @@ for k = 1:18 %Change value to change file range
                 rngTest = max(voltageCount) - min(voltageCount);
                 fprintf(fid, 'Range of voltage in the three spring impulse trial %d : %.2f\n', k-6, rngTest);
                 %Find time from base to peak and avg it
-            
+        fprintf(fid, '-----------------------------------------------------------\n');
 
     elseif (9<k) && (k<13)
 
@@ -148,7 +149,7 @@ for k = 1:18 %Change value to change file range
                 rngTest = max(voltageCount) - min(voltageCount);
                 fprintf(fid, 'Range of voltage in the three spring slow trial %d : %.2f\n', k-9, rngTest);
                 %Find time from base to peak and avg it
-            
+        fprintf(fid, '-----------------------------------------------------------\n');
 
     elseif (12<k) && (k<16)
 
@@ -171,7 +172,7 @@ for k = 1:18 %Change value to change file range
                 rngTest = max(voltageCount) - min(voltageCount);
                 fprintf(fid, 'Range of voltage in the standing impulse trial %d : %.2f\n', k-12, rngTest);
                 %Find time from base to peak and avg it
-          
+        fprintf(fid, '-----------------------------------------------------------\n');
 
     elseif (15<k) && (k<19)
 
@@ -194,7 +195,7 @@ for k = 1:18 %Change value to change file range
                 rngTest = max(voltageCount) - min(voltageCount);
                 fprintf(fid, 'Range of voltage in the standing slow trial %d : %.2f\n', k-15, rngTest);
                 %Find time from base to peak and avg it
-            
+        fprintf(fid, '-----------------------------------------------------------\n');
     end
     
 end
