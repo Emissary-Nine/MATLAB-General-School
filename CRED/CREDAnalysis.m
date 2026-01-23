@@ -11,6 +11,8 @@ for k = 1:numel(files)
     names(k) = files(k).name;
 end
 
+fid = fopen ('Trial_Data.txt','w');
+
 for k = 1:18 %Change value to change file range
     currentTable = tables{k};
     
@@ -68,14 +70,16 @@ for k = 1:18 %Change value to change file range
             
                 meanValue = mean(currentTable{:, 2}); 
                 fprintf('Mean voltage in one spring impulse trial %d : %.2f\n', k, meanValue);
+                fprintf(fid, 'Mean voltage in one spring impulse trial %d : %.2f\n', k, meanValue); % Write to file
                 stdValue = std(currentTable{:, 2},1);
                 fprintf('Std deviation of voltage in one spring impulse trial %d : %.2f\n', k, stdValue);
+                fprintf(fid, 'Std deviation of voltage in one spring impulse trial %d : %.2f\n', k, stdValue); % Write to file
                 voltageCount = currentTable{:, 2};
                 %rangeValue = range(voltageCount,2); <--- fix later
                 rngTest = max(voltageCount) - min(voltageCount);
                 fprintf('Range of voltage in one spring impulse trial %d : %.2f\n', k, rngTest);
+                fprintf(fid, 'Range of voltage in one spring impulse trial %d : %.2f\n', k, rngTest); % Write to file
                 %Find time from base to peak and avg it
-            
 
     elseif (3<k) && (k<7)
 
@@ -90,13 +94,13 @@ for k = 1:18 %Change value to change file range
             hold off
                         
                 meanValue = mean(currentTable{:, 2}); 
-                fprintf('Mean voltage in the one spring slow trial %d : %.2f\n', k-3, meanValue);
+                fprintf(fid, 'Mean voltage in the one spring slow trial %d : %.2f\n', k-3, meanValue);
                 stdValue = std(currentTable{:, 2},1);
-                fprintf('Std deviation of voltage in the one spring slow trial %d : %.2f\n', k-3, stdValue);
+                fprintf(fid, 'Std deviation of voltage in the one spring slow trial %d : %.2f\n', k-3, stdValue);
                 voltageCount = currentTable{:, 2};
                 %rangeValue = range(voltageCount,2); <--- fix later
                 rngTest = max(voltageCount) - min(voltageCount);
-                fprintf('Range of voltage in the one spring slow trial %d : %.2f\n', k-3, rngTest);
+                fprintf(fid, 'Range of voltage in the one spring slow trial %d : %.2f\n', k-3, rngTest);
                 %Find time from base to peak and avg it
             
 
@@ -113,13 +117,13 @@ for k = 1:18 %Change value to change file range
             hold off
                         
                 meanValue = mean(currentTable{:, 2}); 
-                fprintf('Mean voltage in the three spring impulse trial %d : %.2f\n', k-6, meanValue);
+                fprintf(fid, 'Mean voltage in the three spring impulse trial %d : %.2f\n', k-6, meanValue);
                 stdValue = std(currentTable{:, 2},1);
-                fprintf('Std deviation of voltage in the three spring impulse trial %d : %.2f\n', k-6, stdValue);
+                fprintf(fid, 'Std deviation of voltage in the three spring impulse trial %d : %.2f\n', k-6, stdValue);
                 voltageCount = currentTable{:, 2};
                 %rangeValue = range(voltageCount,2); <--- fix later
                 rngTest = max(voltageCount) - min(voltageCount);
-                fprintf('Range of voltage in the three spring impulse trial %d : %.2f\n', k-6, rngTest);
+                fprintf(fid, 'Range of voltage in the three spring impulse trial %d : %.2f\n', k-6, rngTest);
                 %Find time from base to peak and avg it
             
 
@@ -136,13 +140,13 @@ for k = 1:18 %Change value to change file range
             hold off
                         
                 meanValue = mean(currentTable{:, 2}); 
-                fprintf('Mean voltage in the three spring slow trial %d : %.2f\n', k-9, meanValue);
+                fprintf(fid, 'Mean voltage in the three spring slow trial %d : %.2f\n', k-9, meanValue);
                 stdValue = std(currentTable{:, 2},1);
-                fprintf('Std deviation of voltage in the three spring slow trial %d : %.2f\n', k-9, stdValue);
+                fprintf(fid, 'Std deviation of voltage in the three spring slow trial %d : %.2f\n', k-9, stdValue);
                 voltageCount = currentTable{:, 2};
                 %rangeValue = range(voltageCount,2); <--- fix later
                 rngTest = max(voltageCount) - min(voltageCount);
-                fprintf('Range of voltage in the three spring slow trial %d : %.2f\n', k-9, rngTest);
+                fprintf(fid, 'Range of voltage in the three spring slow trial %d : %.2f\n', k-9, rngTest);
                 %Find time from base to peak and avg it
             
 
@@ -159,15 +163,15 @@ for k = 1:18 %Change value to change file range
             hold off
                                     
                 meanValue = mean(currentTable{:, 2}); 
-                fprintf('Mean voltage in the standing impulse trial %d : %.2f\n', k-12, meanValue);
+                fprintf(fid, 'Mean voltage in the standing impulse trial %d : %.2f\n', k-12, meanValue);
                 stdValue = std(currentTable{:, 2},1);
-                fprintf('Std deviation of voltage in the standing impulse trial %d : %.2f\n', k-12, stdValue);
+                fprintf(fid, 'Std deviation of voltage in the standing impulse trial %d : %.2f\n', k-12, stdValue);
                 voltageCount = currentTable{:, 2};
                 %rangeValue = range(voltageCount,2); <--- fix later
                 rngTest = max(voltageCount) - min(voltageCount);
-                fprintf('Range of voltage in the standing impulse trial %d : %.2f\n', k-12, rngTest);
+                fprintf(fid, 'Range of voltage in the standing impulse trial %d : %.2f\n', k-12, rngTest);
                 %Find time from base to peak and avg it
-            
+          
 
     elseif (15<k) && (k<19)
 
@@ -182,13 +186,13 @@ for k = 1:18 %Change value to change file range
             hold off
                                                 
                 meanValue = mean(currentTable{:, 2}); 
-                fprintf('Mean voltage in the standing slow trial %d : %.2f\n', k-15, meanValue);
+                fprintf(fid, 'Mean voltage in the standing slow trial %d : %.2f\n', k-15, meanValue);
                 stdValue = std(currentTable{:, 2},1);
-                fprintf('Std deviation of voltage in the standing slow trial %d : %.2f\n', k-15, stdValue);
+                fprintf(fid, 'Std deviation of voltage in the standing slow trial %d : %.2f\n', k-15, stdValue);
                 voltageCount = currentTable{:, 2};
                 %rangeValue = range(voltageCount,2); <--- fix later
                 rngTest = max(voltageCount) - min(voltageCount);
-                fprintf('Range of voltage in the standing slow trial %d : %.2f\n', k-15, rngTest);
+                fprintf(fid, 'Range of voltage in the standing slow trial %d : %.2f\n', k-15, rngTest);
                 %Find time from base to peak and avg it
             
     end

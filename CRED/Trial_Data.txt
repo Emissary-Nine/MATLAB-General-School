@@ -1,0 +1,54 @@
+Mean voltage in one spring impulse trial 1 : 0.77
+Std deviation of voltage in one spring impulse trial 1 : 0.54
+Range of voltage in one spring impulse trial 1 : 2.40
+Mean voltage in one spring impulse trial 2 : 1.36
+Std deviation of voltage in one spring impulse trial 2 : 1.01
+Range of voltage in one spring impulse trial 2 : 4.41
+Mean voltage in one spring impulse trial 3 : 1.73
+Std deviation of voltage in one spring impulse trial 3 : 1.14
+Range of voltage in one spring impulse trial 3 : 4.41
+Mean voltage in the one spring slow trial 1 : 0.87
+Std deviation of voltage in the one spring slow trial 1 : 0.60
+Range of voltage in the one spring slow trial 1 : 2.70
+Mean voltage in the one spring slow trial 2 : 0.99
+Std deviation of voltage in the one spring slow trial 2 : 0.68
+Range of voltage in the one spring slow trial 2 : 2.86
+Mean voltage in the one spring slow trial 3 : 1.00
+Std deviation of voltage in the one spring slow trial 3 : 0.74
+Range of voltage in the one spring slow trial 3 : 3.26
+Mean voltage in the three spring impulse trial 1 : 1.89
+Std deviation of voltage in the three spring impulse trial 1 : 1.06
+Range of voltage in the three spring impulse trial 1 : 4.18
+Mean voltage in the three spring impulse trial 2 : 2.33
+Std deviation of voltage in the three spring impulse trial 2 : 1.05
+Range of voltage in the three spring impulse trial 2 : 4.38
+Mean voltage in the three spring impulse trial 3 : 2.27
+Std deviation of voltage in the three spring impulse trial 3 : 1.14
+Range of voltage in the three spring impulse trial 3 : 4.41
+Mean voltage in the three spring slow trial 1 : 1.41
+Std deviation of voltage in the three spring slow trial 1 : 0.93
+Range of voltage in the three spring slow trial 1 : 3.89
+Mean voltage in the three spring slow trial 2 : 1.61
+Std deviation of voltage in the three spring slow trial 2 : 1.01
+Range of voltage in the three spring slow trial 2 : 4.15
+Mean voltage in the three spring slow trial 3 : 1.40
+Std deviation of voltage in the three spring slow trial 3 : 0.98
+Range of voltage in the three spring slow trial 3 : 4.41
+Mean voltage in the standing impulse trial 1 : 2.05
+Std deviation of voltage in the standing impulse trial 1 : 1.33
+Range of voltage in the standing impulse trial 1 : 4.32
+Mean voltage in the standing impulse trial 2 : 2.10
+Std deviation of voltage in the standing impulse trial 2 : 1.25
+Range of voltage in the standing impulse trial 2 : 4.28
+Mean voltage in the standing impulse trial 3 : 2.22
+Std deviation of voltage in the standing impulse trial 3 : 1.25
+Range of voltage in the standing impulse trial 3 : 4.37
+Mean voltage in the standing slow trial 1 : 1.64
+Std deviation of voltage in the standing slow trial 1 : 1.12
+Range of voltage in the standing slow trial 1 : 4.40
+Mean voltage in the standing slow trial 2 : 1.67
+Std deviation of voltage in the standing slow trial 2 : 1.04
+Range of voltage in the standing slow trial 2 : 4.28
+Mean voltage in the standing slow trial 3 : 1.62
+Std deviation of voltage in the standing slow trial 3 : 1.12
+Range of voltage in the standing slow trial 3 : 4.41
