@@ -58,15 +58,7 @@ for k = 1:18 %Change value to change file range
 
     if (0<k) && (k<4)
 
-            fig = figure(k); clf(fig)
-            plot(currentTable,"Time_s_","Voltage_V_");
-            xlabel('Time (s)');
-            ylabel('Voltage');
-            title(sprintf('One Spring Impulse Calf Raise V vs T, Trial %d', k));
-            hold on
-            plot(paired_ploc,paired_pks,'r.',MarkerSize=18);
-            plot(paired_vloc,-paired_vks,'g.',MarkerSize=18);
-            hold off
+         
             
                 meanValue = mean(currentTable{:, 2}); 
                 fprintf('Mean voltage in one spring impulse trial %d : %.2f\n', k, meanValue);
@@ -75,12 +67,23 @@ for k = 1:18 %Change value to change file range
                 fprintf('Std deviation of voltage in one spring impulse trial %d : %.2f\n', k, stdValue);
                 fprintf(fid, 'Std deviation of voltage in one spring impulse trial %d : %.2f\n', k, stdValue); % Write to file
                 voltageCount = currentTable{:, 2};
-                %rangeValue = range(voltageCount,2); <--- fix later
                 rngTest = max(voltageCount) - min(voltageCount);
                 fprintf('Range of voltage in one spring impulse trial %d : %.2f\n', k, rngTest);
                 fprintf(fid, 'Range of voltage in one spring impulse trial %d : %.2f\n', k, rngTest); % Write to file
                 %Find time from base to peak and avg it
         fprintf(fid, '-----------------------------------------------------------\n');
+           
+            fig = figure(k); clf(fig)
+            plot(currentTable,"Time_s_","Voltage_V_");
+            xlabel('Time (s)');
+            ylabel('Voltage');
+            title(sprintf('One Spring Impulse Calf Raise V vs T, Trial %d', k));
+            hold on
+            plot(paired_ploc,paired_pks,'r.',MarkerSize=18);
+            plot(paired_vloc,-paired_vks,'g.',MarkerSize=18);
+            %plot(Time_s_,meanValue,'-r','LineWidth',6); <-- fix later
+            legend('Measured Voltage','Peak Voltage', 'Base Voltage',Location='northwest');
+            hold off
 
     elseif (3<k) && (k<7)
 
@@ -92,6 +95,7 @@ for k = 1:18 %Change value to change file range
             hold on
             plot(paired_ploc,paired_pks,'r.',MarkerSize=18);
             plot(paired_vloc,-paired_vks,'g.',MarkerSize=18);
+            legend('Measured Voltage','Peak Voltage', 'Base Voltage',Location='northwest');
             hold off
                         
                 meanValue = mean(currentTable{:, 2}); 
@@ -99,7 +103,6 @@ for k = 1:18 %Change value to change file range
                 stdValue = std(currentTable{:, 2},1);
                 fprintf(fid, 'Std deviation of voltage in the one spring slow trial %d : %.2f\n', k-3, stdValue);
                 voltageCount = currentTable{:, 2};
-                %rangeValue = range(voltageCount,2); <--- fix later
                 rngTest = max(voltageCount) - min(voltageCount);
                 fprintf(fid, 'Range of voltage in the one spring slow trial %d : %.2f\n', k-3, rngTest);
                 %Find time from base to peak and avg it
@@ -115,6 +118,7 @@ for k = 1:18 %Change value to change file range
             hold on
             plot(paired_ploc,paired_pks,'r.',MarkerSize=18);
             plot(paired_vloc,-paired_vks,'g.',MarkerSize=18);
+            legend('Measured Voltage','Peak Voltage', 'Base Voltage',Location='northwest');
             hold off
                         
                 meanValue = mean(currentTable{:, 2}); 
@@ -122,7 +126,6 @@ for k = 1:18 %Change value to change file range
                 stdValue = std(currentTable{:, 2},1);
                 fprintf(fid, 'Std deviation of voltage in the three spring impulse trial %d : %.2f\n', k-6, stdValue);
                 voltageCount = currentTable{:, 2};
-                %rangeValue = range(voltageCount,2); <--- fix later
                 rngTest = max(voltageCount) - min(voltageCount);
                 fprintf(fid, 'Range of voltage in the three spring impulse trial %d : %.2f\n', k-6, rngTest);
                 %Find time from base to peak and avg it
@@ -138,6 +141,7 @@ for k = 1:18 %Change value to change file range
             hold on
             plot(paired_ploc,paired_pks,'r.',MarkerSize=18);
             plot(paired_vloc,-paired_vks,'g.',MarkerSize=18);
+            legend('Measured Voltage','Peak Voltage', 'Base Voltage',Location='northwest');
             hold off
                         
                 meanValue = mean(currentTable{:, 2}); 
@@ -145,7 +149,6 @@ for k = 1:18 %Change value to change file range
                 stdValue = std(currentTable{:, 2},1);
                 fprintf(fid, 'Std deviation of voltage in the three spring slow trial %d : %.2f\n', k-9, stdValue);
                 voltageCount = currentTable{:, 2};
-                %rangeValue = range(voltageCount,2); <--- fix later
                 rngTest = max(voltageCount) - min(voltageCount);
                 fprintf(fid, 'Range of voltage in the three spring slow trial %d : %.2f\n', k-9, rngTest);
                 %Find time from base to peak and avg it
@@ -161,6 +164,7 @@ for k = 1:18 %Change value to change file range
             hold on
             plot(paired_ploc,paired_pks,'r.',MarkerSize=18);
             plot(paired_vloc,-paired_vks,'g.',MarkerSize=18);
+            legend('Measured Voltage','Peak Voltage', 'Base Voltage',Location='northwest');
             hold off
                                     
                 meanValue = mean(currentTable{:, 2}); 
@@ -168,7 +172,6 @@ for k = 1:18 %Change value to change file range
                 stdValue = std(currentTable{:, 2},1);
                 fprintf(fid, 'Std deviation of voltage in the standing impulse trial %d : %.2f\n', k-12, stdValue);
                 voltageCount = currentTable{:, 2};
-                %rangeValue = range(voltageCount,2); <--- fix later
                 rngTest = max(voltageCount) - min(voltageCount);
                 fprintf(fid, 'Range of voltage in the standing impulse trial %d : %.2f\n', k-12, rngTest);
                 %Find time from base to peak and avg it
@@ -184,6 +187,7 @@ for k = 1:18 %Change value to change file range
             hold on
             plot(paired_ploc,paired_pks,'r.',MarkerSize=18);
             plot(paired_vloc,-paired_vks,'g.',MarkerSize=18);
+            legend('Measured Voltage','Peak Voltage', 'Base Voltage',Location='northwest');
             hold off
                                                 
                 meanValue = mean(currentTable{:, 2}); 
@@ -191,7 +195,6 @@ for k = 1:18 %Change value to change file range
                 stdValue = std(currentTable{:, 2},1);
                 fprintf(fid, 'Std deviation of voltage in the standing slow trial %d : %.2f\n', k-15, stdValue);
                 voltageCount = currentTable{:, 2};
-                %rangeValue = range(voltageCount,2); <--- fix later
                 rngTest = max(voltageCount) - min(voltageCount);
                 fprintf(fid, 'Range of voltage in the standing slow trial %d : %.2f\n', k-15, rngTest);
                 %Find time from base to peak and avg it
