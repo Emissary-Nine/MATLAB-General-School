@@ -21,10 +21,10 @@ for k = 1:18 %Change value to change file range
    Voltage_V_ = currentTable{:, 2};
    
    [pks, locs, width, p] = findpeaks(Voltage_V_, Time_s_,MinPeakProminence=1,MinPeakDistance=0.5,WidthReference='halfprom'); % Peak
-   [vks,vlocs,vwidth, vp] = findpeaks(-Voltage_V_,Time_s_,MinPeakProminence=1.5,MinPeakDistance=0.5,MinPeakWidth=0.01); % Base
+   [vks,vlocs,vwidth, vp] = findpeaks(-Voltage_V_,Time_s_,MinPeakProminence=1.5,MinPeakDistance=0.1,MinPeakWidth=0.01); % Base
        
-    minPVdist = 0.1;   % seconds (minimum)
-    maxPVdist = 1.2;   % seconds (maximum)
+    minPVdist = 0.01;   % seconds (minimum)
+    maxPVdist = 4;   % seconds (maximum)
 
         paired_pks   = [];
         paired_vks   = [];
@@ -74,27 +74,27 @@ for k = 1:18 %Change value to change file range
         fprintf(fid, '-----------------------------------------------------------\n');
            
             fig = figure(k); clf(fig)
-            plot(currentTable,"Time_s_","Voltage_V_");
+            plot(currentTable,"Time_s_","Voltage_V_",'LineWidth',2);
             xlabel('Time (s)');
             ylabel('Voltage');
             title(sprintf('One Spring Impulse Calf Raise V vs T, Trial %d', k));
             hold on
-            plot(paired_ploc,paired_pks,'r.',MarkerSize=18);
-            plot(paired_vloc,-paired_vks,'g.',MarkerSize=18);
-            %plot(Time_s_,meanValue,'-r','LineWidth',6); <-- fix later
+            plot(paired_ploc,paired_pks,'r.',MarkerSize=30);
+            plot(paired_vloc,-paired_vks,'.',MarkerSize=30);
+            plot(meanValue,'-r','LineWidth',20); % Fix mean value
             legend('Measured Voltage','Peak Voltage', 'Base Voltage',Location='northwest');
             hold off
 
     elseif (3<k) && (k<7)
 
             fig = figure(k); clf(fig)
-            plot(currentTable,"Time_s_","Voltage_V_");
+            plot(currentTable,"Time_s_","Voltage_V_",'LineWidth',2);
             xlabel('Time (s)');
             ylabel('Voltage');
             title(sprintf('One Spring Slow Calf Raise V vs T, Trial %d', k-3));
             hold on
-            plot(paired_ploc,paired_pks,'r.',MarkerSize=18);
-            plot(paired_vloc,-paired_vks,'g.',MarkerSize=18);
+            plot(paired_ploc,paired_pks,'r.',MarkerSize=30);
+            plot(paired_vloc,-paired_vks,'.',MarkerSize=30);
             legend('Measured Voltage','Peak Voltage', 'Base Voltage',Location='northwest');
             hold off
                         
@@ -111,13 +111,13 @@ for k = 1:18 %Change value to change file range
     elseif (6<k) && (k<10)
 
             fig = figure(k); clf(fig)
-            plot(currentTable,"Time_s_","Voltage_V_");
+            plot(currentTable,"Time_s_","Voltage_V_",'LineWidth',2);
             xlabel('Time (s)');
             ylabel('Voltage');
             title(sprintf('Three Spring Impulsive Calf Raise V vs T, Trial %d', k-6));
             hold on
-            plot(paired_ploc,paired_pks,'r.',MarkerSize=18);
-            plot(paired_vloc,-paired_vks,'g.',MarkerSize=18);
+            plot(paired_ploc,paired_pks,'r.',MarkerSize=30);
+            plot(paired_vloc,-paired_vks,'.',MarkerSize=30);
             legend('Measured Voltage','Peak Voltage', 'Base Voltage',Location='northwest');
             hold off
                         
@@ -134,13 +134,13 @@ for k = 1:18 %Change value to change file range
     elseif (9<k) && (k<13)
 
             fig = figure(k); clf(fig)
-            plot(currentTable,"Time_s_","Voltage_V_");
+            plot(currentTable,"Time_s_","Voltage_V_",'LineWidth',2);
             xlabel('Time (s)');
             ylabel('Voltage');
             title(sprintf('Three Spring Slow Calf Raise V vs T, Trial %d', k-9));
             hold on
-            plot(paired_ploc,paired_pks,'r.',MarkerSize=18);
-            plot(paired_vloc,-paired_vks,'g.',MarkerSize=18);
+            plot(paired_ploc,paired_pks,'r.',MarkerSize=30);
+            plot(paired_vloc,-paired_vks,'.',MarkerSize=30);
             legend('Measured Voltage','Peak Voltage', 'Base Voltage',Location='northwest');
             hold off
                         
@@ -157,13 +157,13 @@ for k = 1:18 %Change value to change file range
     elseif (12<k) && (k<16)
 
             fig = figure(k); clf(fig)
-            plot(currentTable,"Time_s_","Voltage_V_");
+            plot(currentTable,"Time_s_","Voltage_V_",'LineWidth',2);
             xlabel('Time (s)');
             ylabel('Voltage');
             title(sprintf('Standing Impulsive Calf Raise V vs T, Trial %d', k-12));
             hold on
-            plot(paired_ploc,paired_pks,'r.',MarkerSize=18);
-            plot(paired_vloc,-paired_vks,'g.',MarkerSize=18);
+            plot(paired_ploc,paired_pks,'r.',MarkerSize=30);
+            plot(paired_vloc,-paired_vks,'.',MarkerSize=30);
             legend('Measured Voltage','Peak Voltage', 'Base Voltage',Location='northwest');
             hold off
                                     
@@ -180,13 +180,13 @@ for k = 1:18 %Change value to change file range
     elseif (15<k) && (k<19)
 
             fig = figure(k); clf(fig)
-            plot(currentTable,"Time_s_","Voltage_V_");
+            plot(currentTable,"Time_s_","Voltage_V_",'LineWidth',2);
             xlabel('Time (s)');
             ylabel('Voltage');
             title(sprintf('Standing Slow Calf Raise V vs T, Trial %d', k-12));
             hold on
-            plot(paired_ploc,paired_pks,'r.',MarkerSize=18);
-            plot(paired_vloc,-paired_vks,'g.',MarkerSize=18);
+            plot(paired_ploc,paired_pks,'r.',MarkerSize=30);
+            plot(paired_vloc,-paired_vks,'.',MarkerSize=30);
             legend('Measured Voltage','Peak Voltage', 'Base Voltage',Location='northwest');
             hold off
                                                 
@@ -202,3 +202,4 @@ for k = 1:18 %Change value to change file range
     end
     
 end
+
