@@ -58,3 +58,58 @@ actualAccelRes = actualVoltageRes / sens;
 fprintf('Required levels: %.0f\n', requiredLevels);
 fprintf('Minimum bits: %d\n', bitsAccNeed);
 fprintf('Actual acceleration resolution: %.5f g\n', actualAccelRes);
+
+%% FFT
+
+% Import Data
+
+Fs = 1000;              % Sampling frequency (Hz)
+N = (15000);       % Number of samples
+t = (0:N-1)/Fs;         % Time vector
+data = readmatrix('lab7_data.txt');
+data = data(1:N,:);
+data2 = readmatrix('lab7_data2.txt');
+data2 = data2(1:N,:);
+data3 = readmatrix('lab7_data3.txt');
+data3 = data3(1:N,:);
+data4 = readmatrix('lab7_data4.txt');
+data4 = data4(1:N,:);
+
+
+% Plot Time Domain
+figure
+plot(t, data)
+hold on
+plot(t, data2);
+plot(t, data3);
+plot(t, data4);
+hold off
+xlabel('Time (s)')
+ylabel('Voltage (V)')
+title('Voltage vs Time')
+legend('10Hz', '100Hz', '600Hz',  '1100Hz')
+grid on
+
+% FFT Calculation
+Y = fft(data);
+
+% Two-sided magnitude spectrum
+P2 = abs(Y/N);
+
+% Single-sided magnitude spectrum
+P1 = P2(1:floor(N/2)+1);
+
+P1(2:end-1) = 2*P1(2:end-1);
+
+% Frequency vector
+f = Fs*(0:floor(N/2))/N;
+
+% Plot FFT
+figure
+plot(f, P1)
+xlabel('Frequency (Hz)')
+ylabel('Magnitude (V)')
+title('Single-Sided Amplitude Spectrum')
+grid on
+
+xlim([0 Fs/2])
