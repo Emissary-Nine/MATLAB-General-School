@@ -16,7 +16,7 @@ clear all;
 close all;
 
 % Sample rate
-fs = 10; % [Hz]
+fs = 20; % [Hz]
 ts = 1/fs; % [sec]
 
 % Number of samples
@@ -124,3 +124,32 @@ dt_avg = mean(dt);
 fs_avg = 1/dt_avg;
 
 fprintf('Effective Sampling Frequency = %.2f Hz\n', fs_avg);
+
+% Sampling Period Histogram
+
+dt = diff(t);
+
+figure
+histogram(dt, 30)
+
+xlabel('Sampling Period (seconds)')
+ylabel('Count')
+title('Distribution of Sampling Periods')
+grid on
+
+% Calculate statistics
+fprintf('Mean Period: %.6f s\n', mean(dt));
+fprintf('Std Deviation: %.6f s\n', std(dt));
+fprintf('Minimum Period: %.6f s\n', min(dt));
+fprintf('Maximum Period: %.6f s\n', max(dt));
+
+%% frequency
+dp = 1 ./ dt;
+
+figure
+histogram(dp, 30)
+
+xlabel('Recorded Sample Frequencies (Hz)')
+ylabel('Count')
+title('Distribution of Sampling Periods')
+grid on
